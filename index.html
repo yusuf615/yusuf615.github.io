@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Muhammad Yusuf Fadillah</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="assets/images/" type="image/icon type">
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+
+</head>
+
+<body>
+    <div id="container">
+            <nav id="nav">
+            <div class="navbar">
+                <div class="logo-img" ref="threshold">
+                    <a @click="addVisitor('home')" href="#home"><img src="assets/images/logo.png" alt="logo"></a>
+                </div>
+
+                <div class="login-signup-btn">
+
+                    <a @click="addVisitor('resume')" href="assets/Resume/my resume.pdf" target="-blank"
+                        class="btn  ">My CV</a> <a @click="addVisitor('contact')" href="index.html#Footer" class="btn mr-3 ml-3">Contact</a>
+
+                </div>
+                <div class="menu-icon pr-3">
+                    <i class="fa fa-2x fa-bars" v-if="!menuBarOpen" @click="handleMenuBar('open')"
+                        aria-hidden="true"></i>
+                    <i class="fa fa-times fa-2x" v-if="menuBarOpen" @click="handleMenuBar('close')" class="close-Menu"
+                        aria-hidden="true"></i>
+                    <div class="menu-container" ref="menuContainer">
+                        <ul>
+                            <a href="#Intro" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Introduction</li>
+                            </a>
+                            <a href="#About Me" @click="handleMenuBar('close')">
+                                <li class="menu-contents">About Me</li>
+                            </a>
+                            <a href="#My Projects" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Projects</li>
+                            </a>
+                            <a @click="addVisitor('somedia check')" href="#Somedia" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Project 1</li>
+                            </a>
+                            <a @click="addVisitor('vStreamer check')" href="#ContactManager"
+                                @click="handleMenuBar('close')">
+                                <li class="menu-contents">Project 3</li>
+                            </a>
+                            <a href="#TumblrClone" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Project 2</li>
+                            </a>
+                            <a @click="addVisitor('#MemoryGame')" href="#MemoryGame" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Project 4</li>
+                            </a>
+                            <a href="#Footer" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Contact Me</li>
+                            </a>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="backDrop" v-if="menuBarOpen" @click="handleMenuBar()"></div>
+            </div>
+            <ul class="nav-indicator-container indicator-group" id="nav-indicator">
+                <li v-for="indicator in indicatorList" @click='activeIndicator(indicator)' class="indicator"
+                    :class="indicator.isActive"><a :href="indicator.id" :id='indicator.linkId'></a> <span
+                        :style="handleActiveIndicator(indicator)" class="navtitle">{{indicator.title}}</span> </li>
+
+            </ul>
+        </nav>
+        <section id="Intro" ref="login" class="login">
+            <div id="intro-Container">
+                <p class="display-Intro-Text">Hi, My Name Is </p>
+                <h1 class="display-Intro-Text"> Muhammad Yusuf Fadillah<br>I am Designer</h1>
+                <p class="display-Intro-Text">I am currently Based in Jakarta. I have passion for design and challenging
+                    <br> myself creatively.<br>
+                    I can 
+                    create
+                    promotional advertisements in train carriages and create.
+                </p>
+
+            </div>
+
+            <div class="about-me">
+                <a href="#About">About Me?</a>
+
+            </div>
+        </section>
+
+
+
+
+
+
+        <section id="About" ref="About Me" class="About">
+            <div class=" content-texts">
+                <div class="image-frame">
+                    <img src="assets/images/ucup.jpeg" alt="My-Photo" ref="photoBig">
+                </div>
+                <p class="display-text">My Name is
+                <h3 class="display-text" style="display: inline;">Muhammad Yusuf Fadillah
+                </h3>
+                </p>
+                <p class="display-text">You can call me <strong> Yusuf </strong> </p>
+                <p class="display-text">I am graphic designer specializing in graphic desginer with a background in SMK
+                    Pembangunan Jaya-YAKAPI, I have experience helping various clients bring theis visions to life through innovative
+                    and functional
+                </p>
+
+                <p class="display-text"> I Believe that good design should convey a message and create meaningful experiences
+                    Additionally, I am committed to incorporating eco-friendly practices into every project I undertake.
+                </p>
+                <p class="display-text">Outside of design, I enjoy reading books,
+                     which continually inspire my creative process.</p>
+
+                <div class="p-tag  text4  display-text">
+                    <h3> Here are the technologies I've been working <br class="break-header"> with :</h3>
+                    <div class="text4-list">
+                        <ul>
+                            <li>Canva <i style="color: #DD4B25;" class="fab fa-html5"></i></li>
+                            <li>Adobe Illustator <i style="color:#254BDD ;" class="fab fa-css3-alt"></i></li>
+                            <li>Core Idraw <i style="color:#533B78 ;" class="fab fa-bootstrap"></i> </li>
+                        
+                                                      
+
+                        </ul>
+                    </div>
+                </div>
+
+
+
+        </section>
+        <section id="Projects" ref="projects">
+            <div class="projects">
+                <h3 ref="projectsText">
+                    These are Some of Jobs/designer Activity</h3>
+
+                        </ul>
+                        <ul>
+                            <li>Research and inspiration <i style="color:#F7DF1E ;" class="fab fa-js-square"></i></li>
+                            <li>Concept Development  </li>
+                            <li>Collaboration<i style="color:#1ef78a ;" class="fab fa-vuejs"></i></li>
+                            <li>Presentation <i style="color:#5ED3F3 ;" class="fab fa-react"></i></li>
+                        </ul>
+                    
+            </div>
+
+
+            <div class="projects-Container" ref="projectsContainer">
+                <a @click="addVisitor('#MemoryGame')" href="#MemoryGame" class="img1" ref="img1">
+
+                    <img src="assets/images/photo1.jpeg" alt="memorygame">
+
+
+                    <span class="imgtitle-container">
+                        <span class="img-title1">graphic desaigner</span>
+                    </span>
+                </a>
+                <div class="img-backdrop"></div>
+
+                <a @click="addVisitor('tumblr check')" href="#TumblrcClone" class="img2 img-desktopView" ref="img2">
+                    <img src="assets/images/photo2.jpeg" alt="tumblr">
+                    <span class="imgtitle-container">
+                        <span class="img-title2">I made an Aguna Satya Mulya website</span>
+                    </span>
+                </a>
+
+                <a @click="addVisitor('tumblr check')" href="#TumblrcClone" class="img2 img-Mobileview"
+                    ref="img2Mobileview">
+                    <img src="assets/images/photo3.jpeg" alt="Web Programmer">
+                    <span class="imgtitle-container">
+                        <span class="img-title2">i create an website</span>
+                    </span>
+                </a>
+                <div class="img-backdrop"></div>
+
+                <a @click="addVisitor('vStreamer check')" href="#ContactManager" class="img3  img-desktopView"
+                    ref="img3">
+                    <img src="assets/images/photo4.jpeg" alt="contact me">
+                    <span class="imgtitle-container">
+                        <span class="img-title3">Designer</span>
+
+                    </span>
+                </a>
+
+                <a @click="addVisitor('vStreamer check')" href="#ContactManager" style="margin-top: 2rem;"
+                    class="img3 img-Mobileview" ref="img3Mobileview">
+                    <img src="assets/images/photo9.jpeg" alt="contact me">
+                    <span class="imgtitle-container">
+                        <span class="img-title3">Designer Trainer at Aguna Satya Mulya</span>
+
+                    </span>
+                </a>
+
+                <div class="img-backdrop"></div>
+                <a @click="addVisitor('somedia check')" href="#Somedia" class="img4 img-desktopView" ref="img4">
+                    <img src="assets/images/photo6.jpeg" alt="somedia">
+                    <span class="imgtitle-container">
+                        <span class="img-title4">Aguna Satya Mulya</span>
+
+                    </span>
+                </a>
+
+                <a @click="addVisitor('somedia check')" href="#Somedia" class="img4 img-Mobileview"
+                    ref="img4Mobileview">
+                    <img src="assets/images/photo7.jpeg" alt="IT Trainer at Aguna Satya Mulya">
+                    <span class="imgtitle-container">
+                        <span class="img-title4">Designer at Aguna Satya Mulya</span>
+
+                    </span>
+                </a>
+                <div class="img-backdrop"></div>
+                <div class="hoverControl" ref="hoverControl"></div>
+
+            </div>
+
+
+        </section>
+
+
+        <section id="Somedia" ref="Somedia" class="Somedia">
+
+            <div class="Somedia-img">
+
+
+
+
+                <div class="image-box" ref="SomediaImg">
+
+                    <a @click="addVisitor('#')" href="#"
+                        target="#blank"><img src="assets/images/somedia2.jpg" alt="sleeping-box"></a>
+
+
+                </div>
+
+            </div>
+            <div class="project-text project" ref="somediaText">
+
+                <h1>Aguna Satya Mulya</h1>
+
+                <div class="text-container ">
+                    <p>Mengerjakan port idle yaitu tugas menginput foto ke dalam link yang diberikan pembimbing.</p>
+
+
+                </div>
+                <div class="tools  ">
+                    <span>Tools <i style="color: #ff0055;" class="fas fa-tools"></i> </span> : &nbsp; <span>Bootstrap <i
+                            style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp; <span>Vue.Js <i
+                            style="color:#3FB27F ;" class="fab fa-vuejs"></i></span>
+
+                </div>
+                <div class="links ">
+                    <a @click="addVisitor('memoryGame code')" href="#"
+                        target="#blank"><span class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                    &nbsp;
+                    <a @click="addVisitor('somedia site')" href="#"
+                        target="#blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
+                </div>
+
+            </div>
+
+
+            <div class="project-text   project-text-mobile">
+                <div class=" image-box-mobile">
+
+                    <a @click="addVisitor('somedia site')" href="#"
+                        target="#blank"><img src="assets/images/photo1.jpeg" alt="IT Trainer at Aguna Satya Mulya"></a>
+
+
+                </div>
+                <div class="text-container-mobile" ref="somediaMobile">
+                    <h1 class="somedia-Text-Mobile">SoMedia</h1>
+
+                    <div class="text-container somedia-Text-Mobile">
+                        <p>
+                         
+
+                        </p>
+
+
+                    </div>
+                    <div class="tools somedia-Text-Mobile">
+                        <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp;
+                        <span>Bootstrap <i style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp;
+                        <span>Vue.Js <i style="color:#3FB27F ;" class="fab fa-vuejs"></i></span>
+
+                    </div>
+                    <div class="links  somedia-Text-Mobile">
+                        <a @click="addVisitor('#e')" href="#"
+                            target="#blank"><span class="btn  btn-success" style="background-color: #00cf35;">View code
+                                <i style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                        &nbsp;
+                        <a @click="addVisitor('# site')" href="#"
+                            target="#blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                    style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <section id="ContactManager" ref="contactManager" class="contact-Manager">
+
+            <div class="contact-manager-text project" ref="contactManagerText">
+
+                <h1>Designer</h1>
+
+                <div class="text-container  ">
+                    Designer adalah seorang yang bekerja untuk membuat rancangan grafis yang diperlukan untuk media elektronik, media cetak, dan sebagainya
+
+
+                    </p>
+
+
+                </div>
+                <div class="tools">
+                    <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> :
+                    <span>React/Typescript.Js <i style="color:#5ED3F3 ;" class="fab fa-react"></i></span>
+                    &nbsp; <span>Node.Js <i style="color:#5ED3F3 ;" class="fab fa-node-js"></i></span>
+                </div>
+                <div class="links">
+                    <a @click="addVisitor('Tech Muda 2 Website')" href="#"
+                        target="-blank"><span class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                    &nbsp;
+                    <a @click="addVisitor('Aguna Satya Mulya Website')" href="#"
+                        target="#blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
+                </div>
+
+            </div>
+            <div class="contact-manager-image">
+
+
+                <div class="image-box" ref="contactManagerImg">
+                    <a @click="addVisitor('Harco Mangga Dua IT Center')" href="#" target="#blank">
+                        <img src="assets/images/photo4.jpeg" alt="sleeping-box"></a>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="project-text   project-text-mobile">
+                <div class=" image-box-mobile">
+
+                    <a @click="addVisitor('Harco Mangga Dua IT Center')" href="#/"
+                        target="#blank"><img src="assets/images/photo7.jpeg" alt="sleeping-box"></a>
+
+
+                </div>
+                <div class="text-container-mobile" ref="contactMangerMobile">
+                    <h1 class="contactManager-Text-Mobile">Yayasan PLAN</h1>
+
+                    <div class="text-container contactManager-Text-Mobile">
+                        <p>
+                            Plan International telah bekerja di Indonesia sejak 1969 dan resmi menjadi Yayasan Plan International Indonesia (Plan Indonesia) pada tahun 2017.
+                        </p>
+
+
+                    </div>
+                    <div class="tools contactManager-Text-Mobile">
+                        <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> :
+                        <span>React/Typescript.Js <i style="color:#5ED3F3 ;" class="fab fa-react"></i></span>
+                        &nbsp; <span>Node.Js <i style="color:#5ED3F3 ;" class="fab fa-node-js"></i></span>
+
+                    </div>
+                    <div class="links contactManager-Text-Mobile">
+                        <a href=""><span class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                    style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                        &nbsp;
+                        <a href=""><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                    style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+        <section id="MemoryGame" ref="memoryGame" class="Memory-Game">
+
+            <div class="Memory-Game-img">
+
+
+
+
+                <div class="image-box" ref="MemoryGameImg">
+
+                    <a @click="addVisitor('memoryGame site')" href="#"
+                        target="#blank"><img src="assets/images/photo6.jpeg" alt="sleeping-box"></a>
+
+
+                </div>
+
+            </div>
+            <div class="project-text project" ref="MemoryGameText">
+
+                <h1>Universitas Borobudur Lecturer</h1>
+
+                <div class="text-container">
+                    <p>
+                        Universitas Borobudur, adalah perguruan tinggi swasta di Jakarta, Indonesia, yang berdiri pada tahun 1982. Rektor pada tahun 2007 adalah Prof. Dr. H. Basir Barthos. Universitas Borobudur Adalah institusi pendidikan tinggi di Jakarta yang didirikan pada tahun 1982.
+
+                    </p>
+
+
+                </div>
+                <div class="tools">
+                    <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp; <span>Bootstrap <i
+                            style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp; <span>React.Js <i
+                            style="color:#5ED3F3 ;" class="fab fa-react"></i></span>
+
+                </div>
+                <div class="links">
+                    <a @click="addVisitor('Universitas Brobudur Site')"
+                        href="#" target="#blank"><span
+                            class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                    &nbsp;
+                    <a @click="addVisitor('Universitas Brobudur Site')" href="#"
+                        target="#blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
+                </div>
+
+            </div>
+
+            <div class="project-text   project-text-mobile">
+                <div class=" image-box-mobile">
+
+                    <a @click="addVisitor('memoryGame site')" href="https://uche-okoroafor.github.io/Memory-Game/"
+                        target="#blank"><img src="assets/images/image1.jpeg" alt="sleeping-box"></a>
+
+
+                </div>
+                <div class="text-container-mobile" ref="memoryGameMobile">
+                    <h1 class="MemoryGame-Text-Mobile">Memory Game</h1>
+                    <div class="text-container  MemoryGame-Text-Mobile">
+                        <p>
+                            Check how good you are with your Memory by playing "Memory Game".To get started, click on
+                            any
+                            image and try not to click the same image twice to win the Game.
+
+                        </p>
+
+
+                    </div>
+                    <div class="tools MemoryGame-Text-Mobile">
+                        <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp;
+                        <span>Bootstrap <i style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp;
+                        <span>React.Js <i style="color:#5ED3F3 ;" class="fab fa-react"></i></span>
+
+                    </div>
+                    <div class="links  MemoryGame-Text-Mobile">
+                        <a @click="addVisitor('memoryGame code')"
+                            href="https://github.com/uche-okoroafor/Memory-Game/"><span class="btn  btn-success"
+                                style="background-color: #00cf35;">View code <i style="color: #1b1f23"
+                                    class="fab fa-github"></i></span></a>
+                        &nbsp;
+                        <a @click="addVisitor('memoryGame site')" href="https://uche-okoroafor.github.io/Memory-Game/"
+                            target="#blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                    style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section id="TumblrcClone" ref="tumblrClone" class="tumblr-clone">
+
+
+
+            <div class="tumblr-clone-text project" ref="tumblrcloneText">
+
+                <h1>PPKPI</h1>
+
+                <div class="text-container  ">
+                    <p>
+                        A clone of <a @click="addVisitor('PPKPI')" href="#"
+                            style="color: #ff9f00;" target="_blank">PPKPI.COM</a> home page "Desktop View"
+
+                    </p>
+
+
+                </div>
+                <div class="tools">
+                    <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp; <span>Bootstrap <i
+                            style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp; <span>Vue.Js <i
+                            style="color:#3FB27F ;" class="fab fa-vuejs"></i></span>
+
+                </div>
+                <div class="links">
+                    <a @click="addVisitor('tumblr code')" href="#"
+                        target="-blank"><span class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                    &nbsp;
+                    <a @click="addVisitor('tumblr site')" href="#"
+                        target="-blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
+                </div>
+
+            </div>
+            <div class="tumblr-clone-image">
+
+
+                <div class="image-box" ref="tumblrcloneImg">
+                    <a @click="addVisitor('ppkpi site')" href="#"
+                        target="-blank">
+                        <img src="assets/images/photo3.jpeg" alt="PPKPI Gaess"></a>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="project-text   project-text-mobile">
+                <div class=" image-box-mobile">
+
+                    <a @click="addVisitor('tumblr site')" href="#"
+                        target="#blank"><img src="assets/images/tumblrImg1.png" alt="PKPP - MTU PPKPI"></a>
+
+
+                </div>
+                <div class="text-container-mobile" ref="tumblrMobile">
+                    <h1 class="tumblrclone-Text-Mobile">MTU PPKPI</h1>
+
+                    <div class="text-container  tumblrclone-Text-Mobile ">
+                        <p>
+                            A clone of <a @click="addVisitor('resume')" href="https://www.PPKPI.com"
+                                style="color: #ff9f00;" target="_blank">PPKPI.com</a> home page "Desktop View"
+
+                        </p>
+
+
+                    </div>
+                    <div class="tools  tumblrclone-Text-Mobile">
+                        <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp;
+                        <span>Bootstrap <i style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp;
+                        <span>Vue.Js <i style="color:#3FB27F ;" class="fab fa-vuejs"></i></span>
+
+                    </div>
+                    <div class="links  tumblrclone-Text-Mobile">
+                        <a @click="addVisitor('code')" href="#"
+                            target="-blank"><span class="btn  btn-success" style="background-color: #00cf35;">View code
+                                <i style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                        &nbsp;
+                        <a @click="addVisitor(' site')" href="#"
+                            target="-blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                    style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="Footer" ref="footer" class="footer">
+
+            <div>
+
+                <h3 class="footer-Text1" ref="footerText1">Interested in Knowing more about me?</h3>
+            </div>
+            <div class="footer-icons">
+                <div class="footer-icons-container">
+
+                    <a class="iconContainer" href="https://AnisRohmadi.My.Id/web" target="#blank">
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fab fa-2x fa-github icon"></i>
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="iconContainer" href="https://twitter.com/yamin Nuryamin_rohmadi" target="#blank">
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fab fa-2x fa-twitter icon"></i>
+                            </div>
+
+                        </div>
+                    </a>
+                    <a class="iconContainer" href="https://id.linkedin.com/in/yamin Nuryamin-rohmadi-66aba611a"
+                        target="#blank">
+
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fab fa-2x fa-linkedin icon"></i>
+                            </div>
+
+                        </div>
+                    </a>
+                    <a class="iconContainer" href="https://www.instagram.com/yamin Nuryaminrohmadi/" target="#blank">
+
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fab fa-2x fa-instagram icon"></i>
+                            </div>
+
+                        </div>
+                    </a>
+
+                </div>
+                <div class="footer-icons-container pt-0">
+
+                    <a class="iconContainer" href="https://www.facebook.com/yamin Nuryamin.rohmadi/" target="#blank">
+
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fab fa-2x fa-facebook"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="iconContainer" href="mailto:yamin Nuryamin2018@gmail.com" target="#blank">
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fa fa-2x fa-at" aria-hidden="true"></i>
+                            </div>
+
+                        </div>
+                    </a>
+
+                </div>
+
+
+
+            </div>
+
+            <div>
+                <p class="footer-text2" ref="footerText2">Feel free to visit my social media pages</p>
+            </div>
+
+
+
+
+
+            <div class="footer-text">
+                <p>CopyRights &copy; 2023<a @click="addVisitor('Web Developer')"
+                        href="http://www.AnisRohmadi.My.id" target="#blank"> by Yamin Nuryamin, S.Kom., M.Kom.</a></p>
+
+            </div>
+        </section>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+<script src="scripts.js">
+
+</script>
+
+
+</html>
